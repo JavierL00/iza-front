@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
-import { PrincipalComponent } from './principal/principal.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './services/services.component';
@@ -19,7 +18,6 @@ import { ProdPublicitarioComponent } from './prod-publicitario/prod-publicitario
     AppComponent,
     LoginComponent,
     CarritoComponent,
-    PrincipalComponent,
     RegistroComponent,
     ServicesComponent,
     ProdDigitalComponent,

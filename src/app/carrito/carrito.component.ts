@@ -54,5 +54,4 @@ export class CarritoComponent {
   calculateTotal(): number {
     return this.cartItems.reduce((total: number, item: CartItem) => total + (item.precio * item.cantidad), 0);
   }
-
 }

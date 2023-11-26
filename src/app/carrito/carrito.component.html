@@ -1,53 +1,62 @@
-<!-- app.component.html -->
-
-<div class="container mt-5">
-  <div class="card">
-    <div class="card-header">
-      <img src="..\..\assets\img\logo.jpg" alt="Logo" class="logo">
-      <h4 class="card-title ml-2">Izanagi</h4>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>#</th>
-            <th>Producto</th>
-            <th>Precio Final</th>
-            <th>Cantidad</th>
-            <th>Total</th>
-            <th>Comprar</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let item of cartItems; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td>{{ item.nombre }}</td>
-            <td>{{ item.precio | currency: 'S/.' }}</td>
-            <td>
-              <div class="input-group">
-                <button class="btn btn-outline-secondary" (click)="decreaseQuantity(item)">-</button>
-                <input type="text" class="form-control" [(ngModel)]="item.cantidad" style="max-width: 15px">
-                <button class="btn btn-outline-secondary" (click)="increaseQuantity(item)">+</button>
-              </div>
-            </td>
-            <td>{{ (item.precio * item.cantidad) | currency: 'S/.' }}</td>
-            <td>
-              <input type="checkbox" [(ngModel)]="item.selected">
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 offset-md-6 text-right mt-3">
-          <h5>Total: <span class="text-success">{{ calculateTotal() | currency: 'S/.' }}</span></h5>
-          <button class="custom-pay-button">
-            <i class="fas fa-money-bill-wave mr-2"></i> Pagar
-          </button>
-        </div>
-      </div>
-
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Producto</th>
+          <th>Precio Final</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+          <th>Comprar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.precio | currency : "S/." }}</td>
+          <td>
+            <div class="input-group">
+              <button
+                class="btn btn-outline-secondary"
+                (click)="decreaseQuantity(item)"
+              >
+                -
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="item.cantidad"
+                style="max-width: 15px"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                (click)="increaseQuantity(item)"
+              >
+                +
+              </button>
+            </div>
+          </td>
+          <td>{{ item.precio * item.cantidad | currency : "S/." }}</td>
+          <td>
+            <input type="checkbox" [(ngModel)]="item.selected" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-6 text-right mt-3">
+      <h5>
+        Total:
+        <span class="text-success">{{
+          calculateTotal() | currency : "S/."
+        }}</span>
+      </h5>
+      <button class="custom-pay-button">
+        <i class="fas fa-money-bill-wave mr-2"></i> Pagar
+      </button>
     </div>
   </div>
 </div>
