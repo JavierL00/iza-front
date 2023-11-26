@@ -10,6 +10,9 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ServicesComponent } from './services/services.component';
+import { ProdDigitalComponent } from './prod-digital/prod-digital.component';
+import { ProdPublicitarioComponent } from './prod-publicitario/prod-publicitario.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     CarritoComponent,
     PrincipalComponent,
     RegistroComponent,
+    ServicesComponent,
+    ProdDigitalComponent,
+    ProdPublicitarioComponent,
   ],
   imports: [
     BrowserModule,
