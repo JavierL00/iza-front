@@ -2,21 +2,21 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./extranet/login/login.component";
-import {CarritoComponent} from "./extranet/carrito/carrito.component";
-import {PrincipalComponent} from "./extranet/principal/principal.component";
-import {RegistroComponent} from "./extranet/registro/registro.component";
+import { LoginComponent } from './login/login.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'principal', component: PrincipalComponent },
   { path: 'registro', component: RegistroComponent },
-  // Puedes agregar más rutas aquí según sea necesario
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
