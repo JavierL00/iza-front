@@ -1,15 +1,67 @@
-.product-item {
+.container {
   display: flex;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.product-item h3 {
-  margin-bottom: 5px;
+.card {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-header img {
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: red;
+  color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
 }
 
 .custom-pay-button {

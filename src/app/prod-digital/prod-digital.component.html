@@ -1,7 +1,28 @@
-<button class="custom-pay-button" routerLink="/carrito">Ir al carrito</button>
-<div *ngFor="let product of products" class="product-item">
-  <p><strong>ID:</strong> {{ product.id }}</p>
-  <p><strong>Nombre:</strong> {{ product.name }}</p>
-  <p><strong>Precio:</strong> ${{ product.price }}</p>
-  <p><strong>Stock:</strong> {{ product.stock }}</p>
+<div class="card-body">
+  <h1>SELECCION DE PRODUCTOS</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Comprar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency : "S/. " }}</td>
+          <td>{{ product.stock }}</td>
+          <td>
+            <input type="checkbox" [(ngModel)]="product.selected" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="custom-pay-button" routerLink="/carrito">Ir al carrito</button>
 </div>
