@@ -3,22 +3,30 @@
 <div class="container mt-5">
   <div class="row justify-content-center align-items-center">
     <div class="col-md-6">
-      <div class="card text-center" id="loginCard">
+      <div class="card text-center" id="registerCard">
         <div align="center">
           <img src="..\..\assets\img\logo.jpg" alt="Logo" class="card-img-top" height="100">
         </div>
         <div class="card-body">
-          <h5 class="card-title">Iniciar Sesión</h5>
-          <form (ngSubmit)="login()">
+          <h5 class="card-title">Registro</h5>
+          <form (ngSubmit)="register()">
             <div class="form-group">
-              <label for="username">Usuario:</label>
+              <label for="fullName">Nombre Completo:</label>
+              <input type="text" class="form-control" id="fullName" [(ngModel)]="fullName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="email" required>
+            </div>
+            <div class="form-group">
+              <label for="username">Nombre de Usuario:</label>
               <input type="text" class="form-control" id="username" [(ngModel)]="username" required>
             </div>
             <div class="form-group">
               <label for="password">Contraseña:</label>
               <input type="password" class="form-control" id="password" [(ngModel)]="password" required>
             </div>
-            <button type="submit" class="btn btn-primary" >Iniciar Sesión</button>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
           </form>
         </div>
       </div>
